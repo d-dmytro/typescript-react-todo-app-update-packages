@@ -1,30 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Updating the task mate app's dependencies to latest
 
-## Getting Started
+## Step One
 
-First, run the development server:
+We can use the `npm-check-updates` tool to update all dependencies to latest: (https://www.npmjs.com/package/npm-check-updates)[https://www.npmjs.com/package/npm-check-updates]
 
-```bash
-npm run dev
-# or
-yarn dev
+Example:
+
+```
+# Install the package
+npm i -g npm-check-updates
+
+# Check what packages can be updated
+ncu
+
+# Write the new package version to your package.json
+ncu -u
+
+# Install updates
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Check this commit:
+https://github.com/d-dmytro/typescript-react-todo-app-update-packages/commit/99e77105562cd773ddb4a94eadfb8518f950878e
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Step Two
 
-## Learn More
+Fix schema undefined error that appears after updating
 
-To learn more about Next.js, take a look at the following resources:
+Check this commit:
+https://github.com/d-dmytro/typescript-react-todo-app-update-packages/commit/2839072cf4d296ffab8bdc80766988c0e32d7acd
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Step Three
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Fix the Apollo Server setup after upgrading apollo-server-micro
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check this commit:
+https://github.com/d-dmytro/typescript-react-todo-app-update-packages/commit/3989cb6f206ca8c36f7ed5f130e73e06c3438e93
